@@ -286,4 +286,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam1
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT ./ISR.png
+INPUT ./ISR.png
+INPUT ISR.png
+INPUT extractbb -B cropbox -O ISR.png
+INPUT ./SGandSSR.png
+INPUT ./SGandSSR.png
+INPUT SGandSSR.png
+INPUT extractbb -B cropbox -O SGandSSR.png
 INPUT out/main.aux
