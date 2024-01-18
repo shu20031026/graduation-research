@@ -1,0 +1,12 @@
+{
+  "folders": [
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "cloudlatex.enabled": true,
+    "cloudlatex.outDir": "./.workspace",
+    "cloudlatex.projectId": 797888
+  }
+}

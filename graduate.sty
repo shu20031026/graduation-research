@@ -1,0 +1,113 @@
+\twocolumn
+\sloppy
+\flushbottom
+\parindent 0.7em
+\leftmargini 2em
+\leftmarginv .5em
+\leftmarginvi .5em
+\oddsidemargin -5.4mm
+\evensidemargin -5.4mm
+\marginparwidth 48pt 
+\marginparsep 10pt 
+\textwidth 170mm
+\textheight 250mm
+%\topmargin -20mm
+\topmargin -10mm
+\columnsep 7mm
+\parindent 1zw
+\renewcommand{\baselinestretch}{0.88} % Modify the value, if needed.
+
+\def\topfraction{0.99}
+\def\bottomfraction{0.99}
+\def\textfraction{0.01}
+\def\floatpagefraction{0.99}
+\def\dbltopfraction{0.99}
+\def\dblfloatpagefraction{0.99}
+\floatsep .5\floatsep
+\textfloatsep .5\textfloatsep
+\intextsep .5\intextsep
+\dblfloatsep .5\dblfloatsep
+\dbltextfloatsep .5\dbltextfloatsep
+\abovecaptionskip 0pt
+
+\def\title#1{\gdef\@title{#1}}
+\def\engtitle#1{\gdef\@engtitle{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\engauthor#1{\gdef\@engauthor{#1}}
+\def\keyword#1{\gdef\@keyword{#1}}
+
+
+
+% Switch top-left header (\ifheader or ifheaderfalse)
+\newif\ifheader\headerfalse
+
+\def\@maketitle{
+  \vspace*{-1zh}
+  \begin{center}%
+    {\LARGE\sf \@title}%
+    \vskip 1em
+      {\large \@author}%
+    \vskip 1em
+      {\Large\sf \@engtitle}%
+    %     \vskip 1em
+    %     {\large \@engauthor}%
+  \end{center}
+  \@ifundefined{@abstract}{}{%
+    \small
+    \begin{center}%
+      \begin{minipage}{.95\textwidth}%
+        {\bf 概要：}\@abstract
+      \end{minipage}%
+    \end{center}%
+    \gdef\@abstract{}}
+  \vspace*{-1em}
+  \@ifundefined{@keyword}{}{%
+    \small
+    \begin{center}%
+      \begin{minipage}{.95\textwidth}%
+        {\bf キーワード\quad}\@keyword
+      \end{minipage}%
+    \end{center}%
+    \gdef\@keyword{}}
+  \vskip 1em}
+\long\def\abstract#1{\long\gdef\@abstract{#1}}
+
+% 図番，表番
+\def\fnum@figure{図~\thefigure}
+\def\fnum@table{表~\thetable}
+
+% 章，節タイトルのフォーマット
+% \def\section{\@startsection {section}{1}{\z@}%
+%   {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\large\bf}}
+% \def\subsection{\@startsection{subsection}{2}{\z@}%
+%   {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\normalsize\bf}}
+% \def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+%   {.8ex plus .5ex minus .2ex}{.5ex plus .2ex}{\normalsize\bf}}
+
+\def\section{\@startsection {section}{1}{\z@}%
+  {1zh plus .1ex minus .1ex}{0.01zh plus .1ex minus .1ex}{\large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+  {0.5zh plus .1ex minus .1ex}{0.01zh plus .1ex minus .1ex}{\normalsize\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {0.5zh plus .1ex minus .1ex}{0.01zh plus .1ex minus .1ex}{\normalsize\bf}}
+
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+
+% 参考文献のリスト番号を 1) の形式にする．
+\def\thebibliography#1{\section*{\normalsize\centering 参考文献\markboth
+    {参 考 文 献}{参 考 文 献}}\list
+  {{\arabic{enumi}})}{\settowidth\labelwidth{{#1})}\leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \usecounter{enumi}}
+  \def\newblock{\hskip .11em plus .33em minus .07em}
+  \sloppy
+  \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+
+% 引用は 1) 形式の上付きにする．
+\def\@cite#1#2{$^{\hbox{\scriptsize{#1\if@tempswa , #2\fi}})}$}
+
+

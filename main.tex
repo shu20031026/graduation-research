@@ -1,0 +1,75 @@
+\documentclass[twoside]{jarticle}
+
+\usepackage{graduate}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{url,amsmath,amssymb,indent}
+\usepackage{mymacro}
+
+\usepackage{fancyhdr}
+
+\fancypagestyle{plainhead}{}
+\fancypagestyle{plainfoot}{}
+
+\pagestyle{fancy}
+%\fancypagestyle{plain}{\pagestyle{fancy}}
+
+\fancyhead{} % ヘッダーの初期設定をクリア
+\fancyhead[LO]{\small%
+令和 5 年度 北九州工業高等専門学校 生産デザイン工学科 情報システムコース 卒業研究論文集
+}%偶数ページ右ヘッダー
+\fancyhead[RE]{\small%
+小倉：卒業研究論文の原稿のサンプル
+}%奇数ページ左ヘッダー
+\fancyfoot{} % フッダーの初期設定をクリア
+
+
+
+\setlength{\parindent}{0zw}
+
+\makeatletter
+\def\@listi{\leftmargin\leftmargini
+\parsep \z@
+\topsep 0.2\baselineskip \@plus 0.2\baselineskip \@minus 0.1\baselineskip
+\itemsep \z@ \relax}
+\let\@listI\@listi
+\makeatother
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{HFドップラー観測データの利活用を目的とするWebアプリケーションのフロントエンド設計}
+\author{5421 中嶋 柊（指導教員：才田 聡子）}
+\engtitle{
+  HF Doppler Observation Data Utilization Front-End Design of Web Application
+}
+
+\abstract{
+  ここに概要を書く．
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
+}
+
+\keyword{Web アプリケーション フロントエンド ページレンダリング TypeScript Next.js}
+
+\maketitle%
+%\setcounter{page}{5}%ページ番号の初期値
+%\thispagestyle{empty}
+% \pagestyle{empty}
+
+\setlength{\abovedisplayskip}{3.5pt} % 上部のマージン
+\setlength{\belowdisplayskip}{4.5pt} % 下部のマージン
+\setlength{\jot}{0pt} % 
+
+
+
+\thispagestyle{fancy}
+
+\input{doc.tex}
+\end{document}
