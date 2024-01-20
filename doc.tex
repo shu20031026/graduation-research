@@ -1,14 +1,9 @@
 \section{はじめに}
 電離圏研究を目的とする短波ドップラー(HFD)の観測データは, 自然科学分野の研究のためオープンデータとして公開され自由な使用が許可されている. \\
 現状, 当データの効率的な再利用を推進するためデータのグラフィカルな表示を行う数件のwebアプリケーションが開発されているが, その多くが開発運用やユーザーエクスペリエンス (以下 UX) 等の観点での問題点を抱えている. 
-\textcolor{red}{既存システムの概観、とユーザからの要望について記述する。}
-\textcolor{red}{想定するユーザ層、使用シーンをある程度特定しておくとシステム要件を決めるための根拠になるので記述しておく}
 \\本研究では既存のアプリケーションからの新規アプリケーション作成に伴うデータ取得とページのルーティングを通した実装および検証を行う.\\
 
-
-\section{技術選定}
-\textcolor{red}{本研究で構築するシステムの構成について図も含めてわかりやすく解説しておく}
-\textcolor{red}{使用する技術についても、システムのどの部分で何を使うのかは図がないと大変わかりにくいので、ボツになったものも含めてどうしてこの技術を使うのか、という根拠をここでわかりやすく図で解説し、詳しくは各技術についての解説を参照するように誘導しておいた方が良い}
+\section{使用技術}
 \subsection{Next.jsについて}
 Next.jsとはVercel社が提供するWebフレームワークである.
 JavaScriptのUIライブラリの一つであるReact.jsがベースとなっており, その最大の特徴の一つが多様なページレンダリング手法のサポートである.
@@ -185,7 +180,7 @@ ISR(SG)を用いて, ビルド時に存在するパスを生成した後各ペ�
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=\linewidth]{ISR.png}
+		\includegraphics[width=100mm]{ISR.png}
 		\caption{ISR(SG)を用いた際のビルドログ}\label{fig:ISR-build}
 	\end{center}
 \end{figure}
@@ -197,7 +192,7 @@ SGとSSRを併用して, ビルド時には存在するパスのみを静的に�
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=\linewidth]{SGandSSR.png}
+		\includegraphics[width=100mm]{SGandSSR.png}
 		\caption{SGとSSRを併用した場合のビルドログ}\label{fig:SG-SSR-build}
 	\end{center}
 \end{figure}
@@ -246,4 +241,25 @@ Next.jsのドキュメントや有志による技術ブログを調査をした�
 この研究結果及び実装に適切なUI実装を行うことで, 高速でUX的観点上優れたアプリケーションの作成が可能であると考える.\\
 また考察時に述べた追加仮説に関しても調査の上導入することによりUX向上の観点で有益な実装となるのではないだろうか.
 
-\textcolor{red}{参考文献を書こう！}
+\small
+\begin{thebibliography}{99}
+	\setlength{\itemsep}{0pt}
+	\smallskip
+	
+	\bibitem{robot2013_fujii}
+	ss
+	Vol.~31, No.~2, pp.~161-168 (2013)
+	
+	\bibitem{IFAC2006_Gawthrop}
+	P. J. Gawthrop and E. McGookin: 
+	Using LEGO in Control Education, 
+	Proceedings of 7th IFAC Symposium Advances in Control Education, pp.~31-38 (2006)
+	
+	\bibitem{toppers}
+	\url{https://dev.toppers.jp/trac_user/ev3pf/wiki/}
+	
+	\bibitem{rengo2016_sato}
+	qq
+	pp.~1321-1325 (2016)
+\end{thebibliography}
+\normalsize
