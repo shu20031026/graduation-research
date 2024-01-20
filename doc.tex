@@ -1,7 +1,14 @@
 \section{はじめに}
+\subsection{背景}
 電離圏研究を目的とする短波ドップラー(HFD)の観測データは, 自然科学分野の研究のためオープンデータとして公開され自由な使用が許可されている. \\
-現状, 当データの効率的な再利用を推進するためデータのグラフィカルな表示を行う数件のwebアプリケーションが開発されているが, その多くが開発運用やユーザーエクスペリエンス (以下 UX) 等の観点での問題点を抱えている. 
-\\本研究では既存のアプリケーションからの新規アプリケーション作成に伴うデータ取得とページのルーティングを通した実装および検証を行う.\\
+現状, 当データの効率的な再利用を推進するためデータのグラフィカルな表示を行う数件のwebアプリケーションが開発されているが, その多くが開発運用やユーザー体験等の観点での問題点を抱えている. \\
+現在公開されているwebアプリケーションはデータベースにMySQL, バックエンドにPHP, フロントエンドにHTML/CSS及びJavaScriptを用いて作成されており, 使用されている技術が広範囲に渡ることから開発・保守にかかるコストが高い. \\
+またこの点を踏まえフロントエンドとバックエンドの両方にJavaScript(Node.js, React)を用いたアプリケーションも作成されているが, こちらではデータ呼び出しに時間がかかる点やインタラクティブな操作ができないことが課題として挙げられている.
+
+\subsection{本研究の目標}
+この課題への対応として既存のアプリケーションから新規アプリケーションを作成するアプローチにより問題点への対応を行うこととした.\\
+本研究ではこのwebアプリケーション実装に伴うデータ取得とページのルーティングを通した実装および検証を行う.
+
 
 \section{使用技術}
 \subsection{Next.jsについて}
@@ -15,26 +22,67 @@ Next.jsのレンダリングオプションには, 一般的なクライアン�
 \subsection{ページレンダリング手法}
 \subsubsection{ページレンダリングとは}
 Webアプリケーションにおいてページレンダリングとは, ウェブサーバーまたはブラウザがHTML/CSS/JavaScriptなどのコードを解釈し, ユーザーのデバイス上で視覚的なページとして表示するプロセスのことである.
-プロセス内の各ステップを実行するタイミング等により分類されており, 適切な手法を選定することによりサイトの高速化やユーザ体験の改良, SEOの改善等が期待できる.
-次に代表的なレンダリング手法とそのメリット・デメリットについて記す.
+プロセス内の各ステップを実行するタイミング等により分類されており, 適切な手法を選定することによりサイトの高速化やユーザ体験の改良, SEOの改善等が期待できる.\\
+多くのアプリケーションではServerSideApplicationと呼ばれるサーバーに対して送られたリクエストに対して生成されたHTMLを返す手法や, Ajaxと呼ばれる非同期的な追加リクエストを送ることのできる手法が多く用いられている.\\
+しかし現代では仮想DOMと呼ばれる技術を用いることでフォーマンス向上と効率的なUI更新を実現する手法が用いられるようになって来ており, Next.jsでも仮想DOMが使われている.\\
+Next.jsの開発元であるVercel社のCEO, Guillermo Rauch氏は "7 Principles of Rich Web Applications" という題の記事を書いており, その中でも第一項目に 'Pre rendered pages are not optional(サーバーがページをレンダリングするのは任意ではない (必須である)。)'と残している. 
+このことからもサーバーサイドでレンダリングを行うことでラウンドトリップそのものの回数を削減することはユーザー体験上とても重要であると言えるであろう.
+ここではNext.jsで用いられている代表的なレンダリング手法とそのメリット・デメリットについて記す.
+
+\subsubsection{CSR}
+CSR（クライアントサイドレンダリング）は, ウェブページのレンダリングをクライアント側（ブラウザ）で行う手法である.
+このアプローチでは、サーバーからHTMLの基本骨格とJavaScriptを送信し、クライアント側でHTMLを動的に生成する.\\
+CSRはウェブページの内容を動的に更新することが可能で, ユーザーインタラクションに応じて即座にコンテンツを変更できるため, SPA（シングルページアプリケーション）の構築に適している. また, サーバーへのリクエスト回数が減少するためサーバーの負荷を軽減することができる.
+しかし初回ロード時にJavaScriptのダウンロードと実行が必要なため, 表示までの時間が長くなる可能性がありSEO対策に不利な点がデメリットとして挙げられる. また, JavaScriptが無効になっている環境ではコンテンツが正しく表示されない可能性がある.\\
+CSRのアーキテクチャ図を図\ref{fig:CSR-image}に示す.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/CSR.png}
+		\caption{CSRのアーキテクチャ}\label{fig:CSR-image}
+	\end{center}
+\end{figure}
 
 \subsubsection{SSR}
 SSR（サーバーサイドレンダリング）はウェブページのレンダリングをサーバー側で行う手法である.
 この手法ではユーザーのリクエストに応じてサーバーがHTMLを生成し, 完成したページがクライアントに送信される. \\
-SSRはリクエストが起きたタイミングでクライアントサイドと比較して高速なサーバーサイドでHTMLが生成されるため, 初回ページロードの速度を向上させSEO対策に有効である.
+SSRはリクエストが起きたタイミングでクライアントサイドと比較して高速なサーバーサイドでHTMLが生成されるため, 初回ページロードの速度を向上させSEO対策に有効である.\\
 他にも完成されたHTMLが送信されるためSEOに強い点や, クライアントサイドのJavaScript実行環境に依存しにくい点がメリットである.
-しかし, サーバー負荷が大きい点やページ間移動にリロードが伴う点, 後述するSGやISRと比較するとコンテンツの表示に時間が掛かる点等がデメリットとして存在する.
+しかし, サーバー負荷が大きい点やページ間移動にリロードが伴う点, 後述するSGやISRと比較するとコンテンツの表示に時間が掛かる点等がデメリットとして存在する.\\
+SSRのアーキテクチャ図を図\ref{fig:SSR-image}に示す.
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/SSR.png}
+		\caption{SSRのアーキテクチャ}\label{fig:SSR-image}
+	\end{center}
+\end{figure}
 \subsubsection{SG}
 SG（スタティックジェネレーション）は, ビルド時に静的なHTMLファイルを生成しておく手法である.
 このアプローチではビルド時にすべてのページが静的なHTMLとして生成され, リクエストに応じてそのHTMLが提供される.\\
-ビルド時にHTMLが生成されレスポンスの際にはそれを提供するだけのため非常に高速であることがメリットとしてあげられるが, ビルド後の変更が困難なため動的なページ生成には向かないというデメリットが存在する.
+ビルド時にHTMLが生成されレスポンスの際にはそれを提供するだけのため非常に高速であることがメリットとしてあげられるが, ビルド後の変更が困難なため動的なページ生成には向かないというデメリットが存在する.\\
+SGのアーキテクチャ図を図\ref{fig:SG-image}に示す.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/SG.png}
+		\caption{SGのアーキテクチャ}\label{fig:SG-image}
+	\end{center}
+\end{figure}
 
 \subsubsection{ISR}
 ISR（インクリメンタルスタティックリジェネレーション）は, 静的サイトの生成とサーバーサイドレンダリングを組み合わせた手法である. 
 ISRでは, ビルド時に一部のページのみを静的に生成し残りのページはユーザーのリクエストに応じて生成されキャッシュされる. 
 これにより, サイトのビルド時間を短縮しつつ動的なコンテンツの提供が可能となる.\\
-静的生成と動的生成のバランスが取れパフォーマンスとコンテンツの更新の柔軟性が両立されているメリットがあるが, 再生成後初回リクエスト時のオーバーヘッドが大きく読み込みに時間がかかってしまう場合があるというデメリットが存在する.
+静的生成と動的生成のバランスが取れパフォーマンスとコンテンツの更新の柔軟性が両立されているメリットがあるが, 再生成後初回リクエスト時のオーバーヘッドが大きく読み込みに時間がかかってしまう場合があるというデメリットが存在する.\\
+ISRのアーキテクチャ図を図\ref{fig:ISR-image}に示す.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/ISR.png}
+		\caption{ISRのアーキテクチャ}\label{fig:ISR-image}
+	\end{center}
+\end{figure}
 
 \subsubsection{Next.jsにおけるページレンダリング}
 Next.jsのページレンダリングは主にページコンポーネントのライフサイクルとデータ取得方法に依存する特徴があり, それらのレンダリング手法をページごとに異なる方法で適用できる柔軟性にも優れている.\\
@@ -46,7 +94,12 @@ Next.jsのページレンダリングは主にページコンポーネントの�
 このアプリケーションは, 各観測所にて観測されたデータを素のディレクトリ構造のまま公開されている既存のアプリケーションからデータをスクレイピングしてきて再描画を行うものである.
 スクレイピングとはwebアプリケーションからHTMLデータをクローラによって取得し、必要とされる情報を抽出するする技術のことである.\\
 スクレイピングの際には取得元のサイトの規約に乗っ取る義務がある.
-今回の場合は取得先のデータがOSS化されていることと学術目的として取得先の団体からの許可を得ていることから, 過剰な負荷がかからない範囲内での利用が可能であると判断した.
+今回の場合は取得先のデータがOSS化されていることと学術目的として取得先の団体からの許可を得ていることから, 過剰な負荷がかからない範囲内での利用が可能であると判断した.\\
+実装にはライブラリとしてSuperagentとCheerioを用いてNext.js上でTypeScript関数として実装した.\\
+一般的にスクレイピングのような外部サイトにアクセスする場合はCORS(Cross-Origin Resource Sharing)エラーに注意する必要がある.
+CORSエラーは, ウェブページがクライアントサイドで異なるオリジン（異なるドメイン, プロトコル, またはポート）からのリソースにアクセスしようとしたときに発生するセキュリティ上の問題である.\\
+ウェブサイト（当アプリケーション）が異なるドメインの別のウェブサイト（スクレイピング先）にホストされているAPIからデータを取得しようとする場合, ブラウザはこのアクセスを同一オリジンポリシーによりブロックしてしまう場合がある.
+しかし今回の場合はレンダリングをサーバーサイドで行いクライアント側で直接アクセスされないためNext.jsというフレームワーク上でデータのスクレイピングを行ってもCORSエラーは発生しない.
 
 \section{アプリケーション設計と実装方法}
 \subsection{実装の要件}
@@ -82,18 +135,32 @@ Next.jsのページレンダリングは主にページコンポーネントの�
 実装方法はgetStaticPathsと呼ばれる関数内でディレクトリ一覧をスクレイピングし静的にビルドするページを確定させた上で, getStaticPropsという関数でそれら一つ一つのページの波形データを取得してビルドを行う.\\
 またISR技術を用いて再ビルドのタイミングを制御することにより, 一定期間ごとに新しく追加されたデータも取得できるようにさせることができるようにする.
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/app/ISRver.png}
+		\caption{ISRを用いた場合の設計}\label{fig:ISR-arc}
+	\end{center}
+\end{figure}
+
 \subsubsection{SGとSSRを用いる方法}
 2つ目の手法はSGとSSRを併用させる方法である.
 この手法ではディレクトリの取得と波形データの取得をそれぞれSG・SSRをもちいて分離させる方法である.
 実装方法はgetStaticPropsを用いて検索ページに存在するパスを静的に生成し, getServerSidePropsを用いて各ページでリクエストされた際に動的に波形データを返すというものである.
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/app/SG-SSRver.png}
+		\caption{SGとSSRを併用した場合の設計}\label{fig:SG-SSR-arc}
+	\end{center}
+\end{figure}
+
 \subsection{実行環境}
-今回の実行環境としたPCを表　に示す.\\
-また使用したパッケージのバージョンを表　に示す.
+今回の実行環境としたPCを表\ref{table:zikkoukannkyo}に示す.\\
+また使用したパッケージのバージョンを表\ref{table:version}に示す.
 
 \begin{table}[hbtp]
 	\caption{実行環境}
-	\label{table:data_type}
+	\label{table:zikkoukannkyo}
 	\centering
 	\begin{tabular}{lcr}
 		\hline
@@ -107,7 +174,7 @@ Next.jsのページレンダリングは主にページコンポーネントの�
 
 \begin{table}[hbtp]
 	\caption{パッケージのバージョン}
-	\label{table:data_type}
+	\label{table:version}
 	\centering
 	\begin{tabular}{lcr}
 		\hline
@@ -123,17 +190,36 @@ Next.jsのページレンダリングは主にページコンポーネントの�
 
 
 \section{実装結果}
+\subsection{データ取得}
+今回の実装では2種類いずれの方法でもデータを取得する事ができた.\\
+図\ref{fig:search-page-image}と図\ref{fig:wave-page-image}にデータを取得してそのJSONデータをブラウザ上に表示した様子を示す.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/search-page-image.png}
+		\caption{検索ページでデータ取得している様子}\label{fig:search-page-image}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{./images/wave-page-image.png}
+		\caption{波形ページでデータ取得している様子}\label{fig:wave-page-image}
+	\end{center}
+\end{figure}
+
+
 \subsection{スクレイピング関数の実行時間}
 実装した2つの関数の実行時間を示す.
 なお実行時間計測にはperformance.now()メソッドを用い, 関数の実行前後の時間差から計測している.
 
 \subsubsection{scrapeWaveData}
 この関数は, 引数で渡したデータ形式, 観測所名, 年, 日時から観測データのCSVデータを取得しJSON形式に変換するものである.
-実行時間を表 に示す
+実行時間を表\ref{table:scrapeWaveData}に示す
 
 \begin{table}[hbtp]
 	\caption{scrapeWaveDataの実行時間}
-	\label{table:data_type}
+	\label{table:scrapeWaveData}
 	\centering
 	\begin{tabular}{lcr}
 		\hline
@@ -152,11 +238,11 @@ Next.jsのページレンダリングは主にページコンポーネントの�
 
 \subsubsection{scrapeDirectory}
 この関数は, 引数で渡したURL配下に存在するページを再帰的に全探索し, ディレクトリ名をキーとするネストされたオブジェクトとして返すものである.
-実行時間を表 に示す.
+実行時間を表\ref{table:scrapeDirectory}に示す.
 
 \begin{table}[hbtp]
 	\caption{scrapeDirectoryの実行時間}
-	\label{table:data_type}
+	\label{table:scrapeDirectory}
 	\centering
 	\begin{tabular}{lcr}
 		\hline
@@ -180,7 +266,7 @@ ISR(SG)を用いて, ビルド時に存在するパスを生成した後各ペ�
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=100mm]{ISR.png}
+		\includegraphics[width=100mm]{./images/ISR-log.png}
 		\caption{ISR(SG)を用いた際のビルドログ}\label{fig:ISR-build}
 	\end{center}
 \end{figure}
@@ -192,7 +278,7 @@ SGとSSRを併用して, ビルド時には存在するパスのみを静的に�
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=100mm]{SGandSSR.png}
+		\includegraphics[width=100mm]{./images/SGandSSR-log.png}
 		\caption{SGとSSRを併用した場合のビルドログ}\label{fig:SG-SSR-build}
 	\end{center}
 \end{figure}
@@ -241,25 +327,22 @@ Next.jsのドキュメントや有志による技術ブログを調査をした�
 この研究結果及び実装に適切なUI実装を行うことで, 高速でUX的観点上優れたアプリケーションの作成が可能であると考える.\\
 また考察時に述べた追加仮説に関しても調査の上導入することによりUX向上の観点で有益な実装となるのではないだろうか.
 
-\small
 \begin{thebibliography}{99}
-	\setlength{\itemsep}{0pt}
-	\smallskip
+	\bibitem{no1}
+	富家和樹, サービスに応じたUXの設計とページレンダリング手法の実装, 電子制御工学科卒業研究論文集, 北九州工業高等専門学校, 2022
+	\bibitem{no2}
+	仲純平, 短波ドップラーデータ公開用Webアプリケーションの開発, 特別研究公開発表会, 北九州工業高等専門学校, 2022
+	\bibitem{no3}
+	手島拓也 吉田健人 高林佳稀, TypeScriptとReact/Next.jsでつくる実践Webアプリケーション開発, 技術評論社, 東京, 2022
+	\bibitem{no4}
+	ソシオメディア株式会社 上野学 藤井幸多, オブジェクト指向UIデザイン 使いやすいソフトウェアの原理, 技術評論社, 東京, 2020
+	\bibitem{no5}
+	伊原力也 小林大輔 桝田草一 山本怜, Webアプリケーションアクセシビリティ 今日から始める現場からの改善, 技術評論社, 東京, 2023
+	\bibitem{no6}
+	Vercel, Next.js by Vercel - The React Framework, https://nextjs.org, (参照2024-1-20)
+	\bibitem{no7}
+	Vercel, SWR, https://swr.vercel.app/ja, (参照2024-1-20)
+	\bibitem{no7}
+	Guillermo Rauch, 7 Principles of Rich Web Applications, https://rauchg.com/2014/7-principles-of-rich-web-applications, (参照2024-1-20)
 	
-	\bibitem{robot2013_fujii}
-	ss
-	Vol.~31, No.~2, pp.~161-168 (2013)
-	
-	\bibitem{IFAC2006_Gawthrop}
-	P. J. Gawthrop and E. McGookin: 
-	Using LEGO in Control Education, 
-	Proceedings of 7th IFAC Symposium Advances in Control Education, pp.~31-38 (2006)
-	
-	\bibitem{toppers}
-	\url{https://dev.toppers.jp/trac_user/ev3pf/wiki/}
-	
-	\bibitem{rengo2016_sato}
-	qq
-	pp.~1321-1325 (2016)
 \end{thebibliography}
-\normalsize

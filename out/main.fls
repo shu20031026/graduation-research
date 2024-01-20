@@ -307,18 +307,50 @@ INPUT doc.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT out/main.dvi
+INPUT ./images/CSR.png
+INPUT ./images/CSR.png
+INPUT ./images/CSR.png
+INPUT extractbb -B cropbox -O ./images/CSR.png
+INPUT ./images/SSR.png
+INPUT ./images/SSR.png
+INPUT ./images/SSR.png
+INPUT extractbb -B cropbox -O ./images/SSR.png
+INPUT ./images/SG.png
+INPUT ./images/SG.png
+INPUT ./images/SG.png
+INPUT extractbb -B cropbox -O ./images/SG.png
+INPUT ./images/ISR.png
+INPUT ./images/ISR.png
+INPUT ./images/ISR.png
+INPUT extractbb -B cropbox -O ./images/ISR.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT ./images/app/ISRver.png
+INPUT ./images/app/ISRver.png
+INPUT ./images/app/ISRver.png
+INPUT extractbb -B cropbox -O ./images/app/ISRver.png
+INPUT ./images/app/SG-SSRver.png
+INPUT ./images/app/SG-SSRver.png
+INPUT ./images/app/SG-SSRver.png
+INPUT extractbb -B cropbox -O ./images/app/SG-SSRver.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT ./ISR.png
-INPUT ./ISR.png
-INPUT ISR.png
-INPUT extractbb -B cropbox -O ISR.png
-INPUT ./SGandSSR.png
-INPUT ./SGandSSR.png
-INPUT SGandSSR.png
-INPUT extractbb -B cropbox -O SGandSSR.png
+INPUT ./images/search-page-image.png
+INPUT ./images/search-page-image.png
+INPUT ./images/search-page-image.png
+INPUT extractbb -B cropbox -O ./images/search-page-image.png
+INPUT ./images/wave-page-image.png
+INPUT ./images/wave-page-image.png
+INPUT ./images/wave-page-image.png
+INPUT extractbb -B cropbox -O ./images/wave-page-image.png
+INPUT ./images/ISR-log.png
+INPUT ./images/ISR-log.png
+INPUT ./images/ISR-log.png
+INPUT extractbb -B cropbox -O ./images/ISR-log.png
+INPUT ./images/SGandSSR-log.png
+INPUT ./images/SGandSSR-log.png
+INPUT ./images/SGandSSR-log.png
+INPUT extractbb -B cropbox -O ./images/SGandSSR-log.png
 INPUT out/main.aux

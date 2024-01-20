@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1705744349 "out/main.dvi" "out/main.pdf" "out/main" 1705744349 0
-  "out/main.dvi" 1705744349 32000 e6395ebba6c99d8c7da4881467b9d7d2 "latex"
+["dvipdf"] 1705785994 "out/main.dvi" "out/main.pdf" "out/main" 1705785995 0
+  "out/main.dvi" 1705785994 43352 87480450aaf4a193531e71e5bae3b54f "latex"
   (generated)
   "out/main.pdf"
   (rewritten before read)
-["latex"] 1705744348 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705744349 0
-  "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705744122 2310 cd45879df2e47ef50c8e86749c6bee6c ""
+["latex"] 1705785993 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705785995 0
+  "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705744499 2310 cd45879df2e47ef50c8e86749c6bee6c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1463434352 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -67,14 +67,22 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1677365944 40745 87bb86a62d462f93a1efc6b0c65c872e ""
   "/usr/local/texlive/2023/texmf-var/web2c/eptex/platex.fmt" 1683695303 7883693 7e4276b7686d042d6cc66879946ddd7c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "ISR.png" 1705582094 407885 d9622ac32597ce5e1c85f5ca7391c2a4 ""
-  "SGandSSR.png" 1705582392 211986 aaf790ac271715a5c2e115a63550bf86 ""
-  "doc.tex" 1705744348 19705 5a3f3ee469ed9056323fc776d0e31c90 ""
+  "doc.tex" 1705785993 26945 57746a2728609461310ec376cc1c234c ""
   "graduate.sty" 1705450461 3392 4befead4c1d25585195873c5ac98f49c ""
+  "images/CSR.png" 1705769410 14748 0271cc0a587593c68ff949bb11c8553d ""
+  "images/ISR-log.png" 1705582094 407885 d9622ac32597ce5e1c85f5ca7391c2a4 ""
+  "images/ISR.png" 1705769410 18076 0a483b54ffbb30cf3b2e43503085ada2 ""
+  "images/SG.png" 1705769410 18355 7662c3b42792475f31978faaf52c61d2 ""
+  "images/SGandSSR-log.png" 1705582392 211986 aaf790ac271715a5c2e115a63550bf86 ""
+  "images/SSR.png" 1705769410 13481 abd8ea5cee76db327aaf4efd3bdd6909 ""
+  "images/app/ISRver.png" 1705782522 29021 664f57a62e1bcecad82e7a9c686dfa9b ""
+  "images/app/SG-SSRver.png" 1705782522 27083 1b6b4b6d4c922b0d26d83bdba7685443 ""
+  "images/search-page-image.png" 1705785351 159198 45569b71e11d02942836b2f4a43c46ea ""
+  "images/wave-page-image.png" 1705785462 219259 27049f16af0fbabf2f1525758d0d54a4 ""
   "indent.sty" 1705278177 5150 e17bd8c5a3bcf4515640e468a1302994 ""
-  "main.tex" 1705744122 2310 cd45879df2e47ef50c8e86749c6bee6c ""
+  "main.tex" 1705744499 2310 cd45879df2e47ef50c8e86749c6bee6c ""
   "mymacro.sty" 1705278177 5368 65d9031a15dc91e194cc461ef2ae00e7 ""
-  "out/main.aux" 1705744349 4685 28c44fe9ff2e8a983869462aab21808e "latex"
+  "out/main.aux" 1705785994 6523 f71a4579af3a7489397aa4edb032e84c "latex"
   (generated)
   "out/main.aux"
   "out/main.dvi"
