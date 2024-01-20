@@ -1,10 +1,10 @@
 # Fdb version 4
-["dvipdf"] 1705597483 "out/main.dvi" "out/main.pdf" "out/main" 1705597484 0
-  "out/main.dvi" 1705597482 30304 ca010f381a27b0deaafdacd88d550ee1 "latex"
+["dvipdf"] 1705603962 "out/main.dvi" "out/main.pdf" "out/main" 1705603963 0
+  "out/main.dvi" 1705603962 30800 6a63da2c109f9174a2c26a37abd7ab3e "latex"
   (generated)
   "out/main.pdf"
   (rewritten before read)
-["latex"] 1705597482 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705597484 0
+["latex"] 1705603962 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705603963 0
   "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705597482 2360 7feafddea44f23ebb210ad67f3e1fdcc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -64,12 +64,12 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "ISR.png" 1705582094 407885 d9622ac32597ce5e1c85f5ca7391c2a4 ""
   "SGandSSR.png" 1705582392 211986 aaf790ac271715a5c2e115a63550bf86 ""
-  "doc.tex" 1705597063 19192 257258eb83f0d6e409d7ce99d8e31b6c ""
+  "doc.tex" 1705603961 19703 af8e31d327ea7b4d23fd45530603a387 ""
   "graduate.sty" 1705450461 3392 4befead4c1d25585195873c5ac98f49c ""
   "indent.sty" 1705278177 5150 e17bd8c5a3bcf4515640e468a1302994 ""
   "main.tex" 1705597482 2360 7feafddea44f23ebb210ad67f3e1fdcc ""
   "mymacro.sty" 1705278177 5368 65d9031a15dc91e194cc461ef2ae00e7 ""
-  "out/main.aux" 1705597482 4576 eb8312a6a7bb2476b47c08bd605432d0 "latex"
+  "out/main.aux" 1705603962 4685 28c44fe9ff2e8a983869462aab21808e "latex"
   (generated)
   "out/main.aux"
   "out/main.dvi"
