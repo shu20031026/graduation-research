@@ -72,6 +72,7 @@ CSRのアーキテクチャ図を図\ref{fig:CSR-image}に示す.
 	\end{center}
 \end{figure}
 
+\newpage
 \subsubsection{SSR}
 SSR（サーバーサイドレンダリング）は, ウェブページのレンダリングをサーバー側で行う手法である. 
 SSRではユーザーのリクエストに応じてサーバーがHTMLを生成し, 完成したページがクライアントに送信される. \\
@@ -190,6 +191,8 @@ Next.jsにおけるページレンダリングは, ページコンポーネン�
 	\end{center}
 \end{figure}
 
+\newpage
+
 \subsection{環境}
 本研究での実行環境に関して, 使用したPCの仕様を表\ref{table:zikkoukannkyo}に, 使用したパッケージのバージョンを表\ref{table:version}に示す. 
 
@@ -248,9 +251,12 @@ Next.jsにおけるページレンダリングは, ページコンポーネン�
 実装した2つのスクレイピング関数の実行時間について詳述する. \\
 実行時間の計測にはperformance.now()メソッドを用い, 関数の実行前後の時間差で測定した. 
 
+\newpage
+
 \subsubsection{scrapeWaveData}
 この関数は, 指定されたデータ形式, 観測所名, 年, 日時を引数として受け取り, 観測データのCSVを取得しJSON形式に変換する. \\
 この関数の実行時間を表\ref{table:scrapeWaveData}に示す. 
+表より, この関数の実行には平均して約1.2秒かかることがわかる. 
 
 \begin{table}[hbtp]
 	\caption{scrapeWaveDataの実行時間}
@@ -269,11 +275,10 @@ Next.jsにおけるページレンダリングは, ページコンポーネン�
 	\end{tabular}
 \end{table}
 
-表\ref{table:scrapeWaveDatay}から, この関数の実行には平均して約1.2秒かかることがわかる. 
-
 \subsubsection{scrapeDirectory}
 この関数は, 指定されたURL配下に存在するページを再帰的に全探索し, ディレクトリ名をキーとするネストされたオブジェクトとして返すものである. \\
 この関数の実行時間を表\ref{table:scrapeDirectory}に示す. 
+表よりこの関数の実行には平均して約292秒かかることがわかる. 
 
 \begin{table}[hbtp]
 	\caption{scrapeDirectoryの実行時間}
@@ -292,7 +297,6 @@ Next.jsにおけるページレンダリングは, ページコンポーネン�
 	\end{tabular}
 \end{table}
 
-表\ref{table:scrapeDirectory}から, この関数の実行には平均して約292秒かかることがわかる. 
 
 \subsection{静的ビルドの実行時間の比較}
 ISRを用いる手法とSGとSSRを併用する方法との2パターンでビルドを実行し, ビルドログに出た実行時間を示す.
