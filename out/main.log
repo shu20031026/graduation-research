@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.euc) (TeX Live 2023) (preloaded format=platex 2023.5.10)  22 JAN 2024 03:34
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.euc) (TeX Live 2023) (preloaded format=platex 2023.5.10)  22 JAN 2024 03:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -226,26 +226,19 @@ File: ./images/SSR.png Graphic file (type bmp)
 <./images/SSR.png>
 File: ./images/SG.png Graphic file (type bmp)
 <./images/SG.png>
-
-Underfull \vbox (badness 1845) has occurred while \output is active []
-
-[2]
 File: ./images/ISR.png Graphic file (type bmp)
 <./images/ISR.png>
-[3]
+[2] [3]
 File: ./images/app/ISRver.png Graphic file (type bmp)
 <./images/app/ISRver.png>
 File: ./images/app/SG-SSRver.png Graphic file (type bmp)
 <./images/app/SG-SSRver.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: ./images/search-page-image.png Graphic file (type bmp)
 <./images/search-page-image.png>
 File: ./images/wave-page-image.png Graphic file (type bmp)
 <./images/wave-page-image.png>
 
-LaTeX Warning: Reference `table:scrapeWaveDatay' on page 4 undefined on input line 269.
+LaTeX Warning: Reference `table:scrapeWaveDatay' on page 4 undefined on input line 272.
 
 [4]
 File: ./images/ISR-log.png Graphic file (type bmp)
@@ -253,32 +246,32 @@ File: ./images/ISR-log.png Graphic file (type bmp)
 File: ./images/SGandSSR-log.png Graphic file (type bmp)
 <./images/SGandSSR-log.png>
 [5]
-Overfull \hbox (64.36069pt too wide) in paragraph at lines 377--378
+Overfull \hbox (64.36069pt too wide) in paragraph at lines 381--382
 \OT1/cmr/m/n/10 https://www.digital.go.jp/policies/servicedesign/designsystem/ 
  []
 
-
-Underfull \hbox (badness 5189) in paragraph at lines 383--384
+[6]
+Underfull \hbox (badness 5189) in paragraph at lines 387--388
 \OT1/cmr/m/n/10 ca-tions, https://rauchg.com/2014/7-principles-
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 []\JY1/mc/m/n/10 オリジン間リソ ース共有 \OT1/cmr/m/n/10 (CORS),
  []
 
 
-Overfull \hbox (42.72177pt too wide) in paragraph at lines 387--388
+Overfull \hbox (42.72177pt too wide) in paragraph at lines 391--392
 \OT1/cmr/m/n/10 https://developer.mozilla.org/ja/docs/Web/HTTP/CORS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 []\OT1/cmr/m/n/10 Next.js \JY1/mc/m/n/10 の \OT1/cmr/m/n/10 prefetch \JY1/mc/m/n/10 に関して\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 \OT1/cmr/m/n/10 https://taroodr.com/posts/nextjs-prefetch
  []
 
@@ -292,10 +285,10 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  2930 strings out of 476693
  43934 string characters out of 5805373
- 1864209 words of memory out of 5000000
+ 1862209 words of memory out of 5000000
  23339 multiletter control sequences out of 15000+600000
  526777 words of font info for 91 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,12n,62p,296b,420s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/main.dvi (7 pages, 46032 bytes).
+Output written on out/main.dvi (7 pages, 46984 bytes).
