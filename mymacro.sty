@@ -1,6 +1,6 @@
 %%display数式のペナルティ変更%%%%%%%%%%%
 \global\postdisplaypenalty 0%10000
-%%display数式がぺージトップへ来ることを認可。デフォルトでは厳禁（10000）
+%%display数式がぺージトップへ来ることを認可. デフォルトでは厳禁（10000）
 \global\predisplaypenalty 0%10000
 %%display数式がページボトムへ来ることを認可（デフォルト）
 
@@ -12,11 +12,11 @@
 %     \cleaders \hb@xt@#1{\hss$\cdot\m@th$\hss }\hfill \kern \z@
 % }
 \newcommand{\cdotfill}{%
-    \leavevmode
+\leavevmode
 %    \cleaders \hb@xt@0.425em{\hss$\cdot\m@th$\hss }\hfill \kern \z@
-    \cleaders \hb@xt@0.25em{\hss$\cdot\m@th$\hss }\hfill \kern \z@
+\cleaders \hb@xt@0.25em{\hss$\cdot\m@th$\hss }\hfill \kern \z@
 }
-	% leaders, xleaders ???
+% leaders, xleaders ???
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,16 +29,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\def\Dfrac#1#2{\displaystyle{\frac{\raisebox{-1mm}{$\,#1\,$}}{\raisebox{1mm}{$\,#2\,$}}}} 
 %\def\Dfrac#1#2{\displaystyle{\frac{\raisebox{-0.175zh}{$\hspace{0.1zw}#1\hspace{0.1zw}$}}{\raisebox{0.05zh}{$\hspace{0.1zw}#2\hspace{0.1zw}$}}}} 
-\def\dfrac#1#2{\displaystyle{\frac{\raisebox{-0.115zh}{$\hspace{0.1zw}#1\hspace{0.1zw}$}}{\raisebox{0.zh}{$\hspace{0.1zw}#2\hspace{0.1zw}$}}}} 
-\def\sfrac#1#2{{\frac{\raisebox{0.075zh}{\tiny$\hspace{0.1zw}#1\hspace{0.1zw}$}}{\raisebox{-0.075zh}{\tiny$\hspace{0.1zw}#2\hspace{0.1zw}$}}}} 
+\def\dfrac#1#2{\displaystyle{\frac{\raisebox{-0.115zh}{$\hspace{0.1zw}#1\hspace{0.1zw}$}}{\raisebox{0.zh}{$\hspace{0.1zw}#2\hspace{0.1zw}$}}}}
+\def\sfrac#1#2{{\frac{\raisebox{0.075zh}{\tiny$\hspace{0.1zw}#1\hspace{0.1zw}$}}{\raisebox{-0.075zh}{\tiny$\hspace{0.1zw}#2\hspace{0.1zw}$}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%\sfで和文もゴシックに%%%
 \DeclareRobustCommand\sffamily
-        {\not@math@alphabet\sffamily\mathsf
-         \romanfamily\sfdefault\kanjifamily\gtdefault\selectfont}
+{\not@math@alphabet\sffamily\mathsf
+	\romanfamily\sfdefault\kanjifamily\gtdefault\selectfont}
 \DeclareRobustCommand\ttfamily
-        {\not@math@alphabet\ttfamily\mathtt
-         \romanfamily\ttdefault\kanjifamily\gtdefault\selectfont}
+{\not@math@alphabet\ttfamily\mathtt
+	\romanfamily\ttdefault\kanjifamily\gtdefault\selectfont}
 %    \end{macrocode}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,27 +50,27 @@
 % ○で囲んだ数字
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\maru}[1]{{\ooalign{\hfill#1\/\hfill\crcr
-	\raise.167ex\hbox{\mathhexbox20D}}}}
+				\raise.167ex\hbox{\mathhexbox20D}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%脚注 の変更
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\footnoterule{%                                 脚注の上の線
-  \kern -3\p@%
-%%%  \hrule width .4\columnwidth%
-  \hrule width 0.3\textwidth%             罫線を引く
-  \kern 2.6\p@}%
+	\kern -3\p@%
+	%%%  \hrule width .4\columnwidth%
+	\hrule width 0.3\textwidth%             罫線を引く
+	\kern 2.6\p@}%
 \@addtoreset{footnote}{chapter}%
 %%
 \long\def\@makefntext#1{%                 脚注そのものを出力する命令
-\advance\leftskip by 2.5zw%
-\parindent 0zw%
-\noindent%
-%%\hbox to 2zw{\hss $^{\@thefnmark}$}#1}%
-%\llap{$^{*{\@thefnmark}}\,$}#1}%
-%\llap{$^{注\,{\@thefnmark}}\,$}#1}%
-\llap{$^{(注\,{\@thefnmark})}\,$}#1}%
+	\advance\leftskip by 2.5zw%
+	\parindent 0zw%
+	\noindent%
+	%%\hbox to 2zw{\hss $^{\@thefnmark}$}#1}%
+	%\llap{$^{*{\@thefnmark}}\,$}#1}%
+	%\llap{$^{注\,{\@thefnmark}}\,$}#1}%
+	\llap{$^{(注\,{\@thefnmark})}\,$}#1}%
 
 %\def\thefootnote{\fnsymbol{footnote}}
 %\def\@makefnmark{\hbox{$^{*{\@thefnmark}}\,$}}
@@ -90,21 +90,21 @@
 
 \let\org@cite\@cite
 \def\cite{\@ifnextchar[% ]
- {\@tempswatrue\let\@cite\org@cite\@citex}
- {\@tempswafalse\let\@cite\org@cite\@citex[]}}
+	{\@tempswatrue\let\@cite\org@cite\@citex}
+	{\@tempswafalse\let\@cite\org@cite\@citex[]}}
 \def\Cite{\@ifnextchar[% ]
- {\@tempswatrue\let\@cite\@Cite\@citex}
- {\@tempswafalse\let\@cite\@Cite\@citex[]}}
+	{\@tempswatrue\let\@cite\@Cite\@citex}
+	{\@tempswafalse\let\@cite\@Cite\@citex[]}}
 
 \def\@Cite#1#2{\leavevmode %% \unskip
-  \ifnum\lastpenalty=\z@\penalty\@highpenalty\fi% highpenalty before
-  {\multiply\@highpenalty 3 #1%             % triple-highpenalties within
-      \if@tempswa,\penalty\@highpenalty\ #2\fi % and before note.%(
-    }\spacefactor\@m}
-    
+\ifnum\lastpenalty=\z@\penalty\@highpenalty\fi% highpenalty before
+{\multiply\@highpenalty 3 #1%             % triple-highpenalties within
+\if@tempswa,\penalty\@highpenalty\ #2\fi % and before note.%(
+}\spacefactor\@m}
+
 \def\scite{\@ifnextchar[% ]
- {\@tempswatrue\let\@cite\@scite\@citex}
- {\@tempswafalse\let\@cite\@scite\@citex[]}}
+	{\@tempswatrue\let\@cite\@scite\@citex}
+	{\@tempswafalse\let\@cite\@scite\@citex[]}}
 \def\@scite#1#2{\,$^{\mbox{\tiny{#1\if@tempswa , #2\fi}}}$}
 
 %%%%%%%%%%%%%%%
@@ -115,32 +115,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\eqnarray{%%
- \stepcounter{equation}%%
- \let\@currentlabel=\theequation
- \global\@eqnswtrue
- \global\@eqcnt\z@
- \tabskip\@centering
- \let\\=\@eqncr
- $$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering
- $\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne 
- %%\hskip 2\arraycolsep 
- \hfil$\displaystyle{{}##{}}$\hfil
- &\global\@eqcnt\tw@ $\displaystyle\tabskip\z@{##}$\hfil 
- \tabskip\@centering&\llap{##}\tabskip\z@\cr}
- 
- 
- 
+\stepcounter{equation}%%
+\let\@currentlabel=\theequation
+\global\@eqnswtrue
+\global\@eqcnt\z@
+\tabskip\@centering
+\let\\=\@eqncr
+$$\halign to \displaywidth\bgroup\@eqnsel\hskip\@centering
+$\displaystyle\tabskip\z@{##}$&\global\@eqcnt\@ne 
+%%\hskip 2\arraycolsep 
+\hfil$\displaystyle{{}##{}}$\hfil
+&\global\@eqcnt\tw@ $\displaystyle\tabskip\z@{##}$\hfil 
+\tabskip\@centering&\llap{##}\tabskip\z@\cr}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% 図表見出しの変更
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \long\def\@makecaption#1#2{%
- %\vskip 10pt 
- \setbox\@tempboxa\hbox{#1\hspace{1zw}#2}
- \ifdim \wd\@tempboxa >\hsize 
- %%\unhbox\@tempboxa\par
- \hbox to \hsize{\hfil #1\hspace{1zw}%%
-    \parbox[t]{0.8\hsize}{#2}\hfil}%%図説の頭をインデントする
-  \else \hbox to\hsize{\hfil\box\@tempboxa\hfil}
- \fi
+	%\vskip 10pt 
+	\setbox\@tempboxa\hbox{#1\hspace{1zw}#2}
+	\ifdim \wd\@tempboxa >\hsize
+		%%\unhbox\@tempboxa\par
+		\hbox to \hsize{\hfil #1\hspace{1zw}%%
+			\parbox[t]{0.8\hsize}{#2}\hfil}%%図説の頭をインデントする
+	\else \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+
+	\fi
 }
 
