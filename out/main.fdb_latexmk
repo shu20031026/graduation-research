@@ -1,10 +1,10 @@
 # Fdb version 4
-["dvipdf"] 1705862856 "out/main.dvi" "out/main.pdf" "out/main" 1705862858 0
-  "out/main.dvi" 1705862856 46620 b7e692d122390a443aa0843475d056e3 "latex"
+["dvipdf"] 1705863204 "out/main.dvi" "out/main.pdf" "out/main" 1705863206 0
+  "out/main.dvi" 1705863204 46968 91be3b030debfb51de6a67361f6b8b82 "latex"
   (generated)
   "out/main.pdf"
   (rewritten before read)
-["latex"] 1705862855 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705862858 0
+["latex"] 1705863203 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705863206 0
   "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705862456 2386 432233b2b9676a59bb7a79cdd6bfac7b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -66,7 +66,7 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1677365944 40745 87bb86a62d462f93a1efc6b0c65c872e ""
   "/usr/local/texlive/2023/texmf-var/web2c/eptex/platex.fmt" 1683695303 7883693 7e4276b7686d042d6cc66879946ddd7c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "doc.tex" 1705862853 29146 42f7f5c18cd392b0bf897220f0a4576c ""
+  "doc.tex" 1705863203 29398 631092ce27cb503510808023fce5ded0 ""
   "graduate.sty" 1705450461 3392 4befead4c1d25585195873c5ac98f49c ""
   "images/CSR.png" 1705769410 14748 0271cc0a587593c68ff949bb11c8553d ""
   "images/ISR-log.png" 1705582094 407885 d9622ac32597ce5e1c85f5ca7391c2a4 ""
@@ -81,7 +81,7 @@
   "indent.sty" 1705278177 5150 e17bd8c5a3bcf4515640e468a1302994 ""
   "main.tex" 1705862456 2386 432233b2b9676a59bb7a79cdd6bfac7b ""
   "mymacro.sty" 1705858001 5300 83590f5cec080cca8c46291b2f886f6c ""
-  "out/main.aux" 1705862856 7265 42455bdd8a6cb9417425c6ee8376c124 "latex"
+  "out/main.aux" 1705863204 7265 dd571189141f77a37d0228602ec35546 "latex"
   (generated)
   "out/main.aux"
   "out/main.dvi"
