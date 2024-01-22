@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1705864187 "out/main.dvi" "out/main.pdf" "out/main" 1705864189 0
-  "out/main.dvi" 1705864187 46912 6bc6ce1c632fca5c16c63786b3789c61 "latex"
+["dvipdf"] 1705917055 "out/main.dvi" "out/main.pdf" "out/main" 1705917057 0
+  "out/main.dvi" 1705917055 46992 03ae495bcc5de192fd45d9de8fa32fe7 "latex"
   (generated)
   "out/main.pdf"
   (rewritten before read)
-["latex"] 1705864186 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705864189 0
-  "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705862456 2386 432233b2b9676a59bb7a79cdd6bfac7b ""
+["latex"] 1705917054 "/Users/shu20031026/projects/kosen/research/tex/main.tex" "out/main.dvi" "main" 1705917057 0
+  "/Users/shu20031026/projects/kosen/research/tex/main.tex" 1705917054 2416 56dd01d003a87b2771a163888c1387d9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1463434352 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -38,6 +38,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss17.tfm" 1136768653 1320 ed93d62c5f2c16343826001f03341dbc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -66,7 +67,7 @@
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1677365944 40745 87bb86a62d462f93a1efc6b0c65c872e ""
   "/usr/local/texlive/2023/texmf-var/web2c/eptex/platex.fmt" 1683695303 7883693 7e4276b7686d042d6cc66879946ddd7c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "doc.tex" 1705864186 29374 b0db26f6cacd580a34beb8c7c61b0fa9 ""
+  "doc.tex" 1705916979 29415 ba34a746a0f89b65cc16eeb6815beb9e ""
   "graduate.sty" 1705450461 3392 4befead4c1d25585195873c5ac98f49c ""
   "images/CSR.png" 1705769410 14748 0271cc0a587593c68ff949bb11c8553d ""
   "images/ISR-log.png" 1705582094 407885 d9622ac32597ce5e1c85f5ca7391c2a4 ""
@@ -79,9 +80,9 @@
   "images/search-page-image.png" 1705785351 159198 45569b71e11d02942836b2f4a43c46ea ""
   "images/wave-page-image.png" 1705785462 219259 27049f16af0fbabf2f1525758d0d54a4 ""
   "indent.sty" 1705278177 5150 e17bd8c5a3bcf4515640e468a1302994 ""
-  "main.tex" 1705862456 2386 432233b2b9676a59bb7a79cdd6bfac7b ""
+  "main.tex" 1705917054 2416 56dd01d003a87b2771a163888c1387d9 ""
   "mymacro.sty" 1705858001 5300 83590f5cec080cca8c46291b2f886f6c ""
-  "out/main.aux" 1705864187 7265 f7567836db0d56f9a7ba8a3102cd4294 "latex"
+  "out/main.aux" 1705917055 7265 f7567836db0d56f9a7ba8a3102cd4294 "latex"
   (generated)
   "out/main.aux"
   "out/main.dvi"

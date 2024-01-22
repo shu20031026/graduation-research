@@ -349,4 +349,5 @@ INPUT ./images/SGandSSR-log.png
 INPUT ./images/SGandSSR-log.png
 INPUT ./images/SGandSSR-log.png
 INPUT extractbb -B cropbox -O ./images/SGandSSR-log.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT out/main.aux
